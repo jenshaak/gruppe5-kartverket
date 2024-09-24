@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Check</p>
+</div>
+
+<div id="map" style="height:680px"></div>
+
+@section Scripts {
+
+    <script>
+
+    var map = L.map('map').setView([58.164048, 8.004007], 13); //initial location (can this be fetched from device? )
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            map.pm.addControls({
+                position: 'topleft',
+                drawCircleMarker: false,
+                rotateMode: false,
+                cutPolygon: false,
+                drawText: false
+
+            });
+    </script>
+}
